@@ -1,8 +1,11 @@
 {
   "name": "@strive-cli/component-test3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "123",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run clean && npm run build:esm && npm run build:umd",
@@ -10,7 +13,7 @@
     "lint": "vue-cli-service lint",
     "build:esm": "rollup -c build/rollup.esm.config.js",
     "build:umd": "rollup -c build/rollup.umd.config.js",
-    "build:demo":"npm install && npm run build && cd example && npm install",
+    "build:demo": "npm install && npm run build && cd example && npm install",
     "clean": "rimraf ./dist",
     "prepublishOnly": "npm run lint && npm run test:unit && npm run build"
   },
@@ -20,7 +23,10 @@
     "core-js": "^3.8.3",
     "lodash-es": "^4.17.21"
   },
-  "files": ["example","dist"],
+  "files": [
+    "example",
+    "dist"
+  ],
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
